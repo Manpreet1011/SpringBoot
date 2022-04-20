@@ -4,27 +4,25 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 //import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 //@RestController
+@Slf4j
 public class SpringDemoApplication {
 
 	public static void main(String[] args) {
 
-		//SpringApplication.run(SpringDemoApplication.class, args);
-		//Car car=new Car("Honda","Civic",()->"Petrol Engine");
-		ApplicationContext context=new FileSystemXmlApplicationContext("classpath:beans.xml");
-		Car car=context.getBean(Car.class);
-		System.out.println(car);
-		System.out.println(context.getBean(User.class));
-		((FileSystemXmlApplicationContext) context).registerShutdownHook();
-
+		ApplicationContext context= new AnnotationConfigApplicationContext(AppConfig.class, User.class);
+		Car car1=context.getBean(Car.class);
+		log.info("Car -{}", car1);
 	}
 	//@GetMapping("/student")
 //	public User getUser()

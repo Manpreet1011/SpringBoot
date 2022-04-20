@@ -2,8 +2,11 @@ package com.manpreet.springDemo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
+
 //import
 @Data
+@ToString
 //@AllArgsConstructor
 public class Car {
     private String make;
