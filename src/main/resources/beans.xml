@@ -2,15 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean name="electricEngine" class="com.manpreet.springDemo.ElectricEngine">
+    <bean name="electricEngine" class="com.manpreet.springDemo.domain.ElectricEngine">
     </bean>
-    <bean name="petrolEngine" class="com.manpreet.springDemo.PetrolEngine"></bean>
-    <bean name="car" class="com.manpreet.springDemo.Car">
+    <bean name="petrolEngine" class="com.manpreet.springDemo.domain.PetrolEngine"></bean>
+    <bean name="car" class="com.manpreet.springDemo.domain.Car">
         <constructor-arg name="make" value="HONDA"></constructor-arg>
         <constructor-arg name="model" value="CRV"></constructor-arg>
         <constructor-arg name="engine" ref="petrolEngine"></constructor-arg>
     </bean>
-    <bean name="user" init-method="init" destroy-method="destroy" class="com.manpreet.springDemo.User">
+    <bean name="user" init-method="init" destroy-method="destroy" class="com.manpreet.springDemo.domain.User">
         <property name="fname" value="Manpreet"></property>
         <property name="lname" value="Khangura"></property>
         <property name="cname" value="Java"></property>

@@ -1,4 +1,4 @@
-package com.manpreet.springDemo;
+package com.manpreet.springDemo.domain;
 
 public class PetrolEngine implements Engine{
     @Override

@@ -1,9 +1,6 @@
-package com.manpreet.springDemo;
+package com.manpreet.springDemo.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 //import sun.awt.image.ImageWatched;
 
 import java.util.ArrayList;
@@ -14,6 +11,7 @@ import java.util.Map;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class User {
     private String fname;
     private String lname;

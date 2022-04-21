@@ -1,4 +1,4 @@
-package com.manpreet.springDemo;
+package com.manpreet.springDemo.config;
 
 import com.manpreet.springDemo.domain.Car;
 import com.manpreet.springDemo.domain.ElectricEngine;
@@ -8,9 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.PropertySource;
 
 import java.text.NumberFormat;
-
-@PropertySource("Classpath: car.properties")
-public class AppConfig {
+@PropertySource("classpath:car.properties")
+public class ApppConfig {
     @Value("${car.make}")
     private String make;
     @Value("${car.model}")
@@ -23,9 +22,8 @@ public class AppConfig {
     public PetrolEngine petrolEngine(){
         return new PetrolEngine();
     }
-   @Bean
+    @Bean
     public Car car(){
-        return new Car("Honda","Civic",petrolEngine(),NumberFormat.getInstance());
-   //     return new Car(make,model,petrolEngine(),NumberFormatProvider);
+        return new Car(make,model,petrolEngine(), NumberFormat.getInstance());
     }
 }

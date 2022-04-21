@@ -1,4 +1,4 @@
-package com.manpreet.springDemo;
+package com.manpreet.springDemo.domain;
 
 public interface Engine {
     String getEngine();
